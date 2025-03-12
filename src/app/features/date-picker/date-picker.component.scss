@@ -1,0 +1,28 @@
+.custom-input {
+    width: 278px;
+    height: 54px;
+    
+    .mat-mdc-form-field-flex {
+      align-items: center;
+      height: 100%;
+    }
+  
+    .mat-mdc-text-field-wrapper {
+      border: 1px solid #757575 !important;
+      border-radius: 4px !important;
+      background-color: #FAF9F6;
+    }
+  
+    input {
+      font-size: 16px;
+      padding: 10px;
+      height: 100%;
+      text-align: left;
+    }
+  
+    .mat-mdc-floating-label {
+      top: -8px !important;
+      font-size: 14px !important;
+    }
+  }
+  

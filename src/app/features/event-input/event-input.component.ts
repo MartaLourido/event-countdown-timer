@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-event-input',
@@ -11,5 +11,10 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./event-input.component.scss'],
 })
 export class EventInputComponent {
-  eventTitle: string = '';
+  @Input() eventTitle: string = '';
+  @Output() titleChange = new EventEmitter<string>();
+
+  updateTitle(newTitle: string) {
+    this.titleChange.emit(newTitle);
+  }
 }

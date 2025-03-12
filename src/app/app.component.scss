@@ -1,13 +1,57 @@
-
-main {
-  width: 100%;
-  min-height: 100vh;
+.page {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(245, 243, 243, 1);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: relative;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
 
-  h1 {
-    font-size: 6rem;
+h1 {
+  font-family: 'Open Sauce One', sans-serif;
+  font-weight: 800;
+  font-size: 67px;
+  line-height: 135%;
+  letter-spacing: -2%;
+  color: #72035D;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.countdown {
+  font-size: 74px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.custom-input {
+  width: 278px;
+  height: 54px;
+  font-size: 16px;
+
+  input {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
   }
 }

@@ -1,8 +1,4 @@
-<div class="event-input">
-  <h1>Time to {{ eventTitle || 'Your event' }}</h1>
-
-  <mat-form-field appearance="outline" class="custom-input" floatLabel="always">
-    <mat-label>Title</mat-label>
-    <input matInput [(ngModel)]="eventTitle" placeholder="Your event" />
-  </mat-form-field>
-</div>
+<mat-form-field appearance="outline" class="custom-input" floatLabel="always">
+  <mat-label>Title</mat-label>
+  <input matInput [(ngModel)]="eventTitle" (ngModelChange)="updateTitle($event)" placeholder="Your event" />
+</mat-form-field>
