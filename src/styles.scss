@@ -1,5 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
-
 body {
   margin: 0;
+  font-family: 'Open Sauce One', sans-serif;
 }
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('/assets/fonts/OpenSauceOne.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Open Sauce One', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 135%;
+  letter-spacing: -2%;
+  color: #72035D;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
