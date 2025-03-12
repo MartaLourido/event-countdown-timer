@@ -1,5 +1,8 @@
 <div class="event-input">
-    <label for="event">Event Name:</label>
-    <input type="text" id="event" (input)="updateEventName($event)" placeholder="Enter event name..." />
-  </div>
-  
+  <h1>Time to {{ eventTitle || 'Your event' }}</h1>
+
+  <mat-form-field appearance="outline" class="custom-input" floatLabel="always">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="eventTitle" placeholder="Your event" />
+  </mat-form-field>
+</div>
