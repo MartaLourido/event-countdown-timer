@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -11,10 +11,11 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./date-picker.component.scss'],
 })
 export class DatePickerComponent {
-  formattedDate: string = '';
+  @Input() formattedDate: string = '';
+  @Output() dateChange = new EventEmitter<string>();
 
   updateDate(event: Event): void {
     const input = event.target as HTMLInputElement;
-    this.formattedDate = input.value;
+    this.dateChange.emit(input.value);
   }
 }

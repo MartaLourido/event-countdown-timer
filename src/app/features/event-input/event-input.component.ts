@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-event-input',
@@ -14,7 +14,8 @@ export class EventInputComponent {
   @Input() eventTitle: string = '';
   @Output() titleChange = new EventEmitter<string>();
 
-  updateTitle(newTitle: string) {
-    this.titleChange.emit(newTitle);
+  onTitleChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.titleChange.emit(input.value);
   }
 }

@@ -1,13 +1,11 @@
 <div class="page">
   <h1>Time to {{ eventTitle || 'Your event' }}</h1>
 
-  <!-- Countdown (TODO: implement real countdown Later) -->
-  <div class="countdown">
-    20 days, 3 h, 15 m, 10 s 
-  </div>
+  <!-- Countdown Timer -->
+  <app-countdown-timer [eventDate]="formattedDate"></app-countdown-timer>
 
   <div class="form-container">
     <app-event-input [eventTitle]="eventTitle" (titleChange)="updateEventTitle($event)"></app-event-input>
-    <app-date-picker></app-date-picker>
+    <app-date-picker [formattedDate]="formattedDate" (dateChange)="updateEventDate($event)"></app-date-picker>
   </div>
 </div>
