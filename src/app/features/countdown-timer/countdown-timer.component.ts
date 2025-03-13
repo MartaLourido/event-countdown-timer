@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -6,44 +6,48 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
   templateUrl: './countdown-timer.component.html',
   styleUrls: ['./countdown-timer.component.scss'],
 })
-export class CountdownTimerComponent implements OnInit, OnDestroy {
+export class CountdownTimerComponent implements OnInit, OnDestroy, OnChanges {
   @Input() eventDate: string = '';
   remainingTime: string = '';
-  private interval: any;
+  private interval: number | undefined;
 
   ngOnInit(): void {
     this.startCountdown();
   }
 
-  ngOnChanges(): void {
-    this.startCountdown();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['eventDate']?.currentValue) {
+      this.startCountdown();
+    }
   }
 
   ngOnDestroy(): void {
     clearInterval(this.interval);
   }
 
-  startCountdown(): void {
-    if (this.eventDate) {
-      clearInterval(this.interval);
-      this.interval = setInterval(() => {
-        this.updateCountdown();
-      }, 1000);
-    }
+  private startCountdown(): void {
+    if (!this.eventDate) return;
+    
+    clearInterval(this.interval);
+    this.interval = window.setInterval(() => this.updateCountdown(), 1000);
+    this.updateCountdown();
   }
 
-  updateCountdown(): void {
+  private updateCountdown(): void {
     if (!this.eventDate) {
       this.remainingTime = 'No event date selected';
       return;
     }
 
-    const eventTime = new Date(this.eventDate).getTime();
+    const eventDateObj = new Date(this.eventDate);
+    eventDateObj.setHours(23, 59, 59, 999);
+    const eventTime = eventDateObj.getTime();
+    
     const currentTime = new Date().getTime();
     const difference = eventTime - currentTime;
 
     if (difference <= 0) {
-      this.remainingTime = 'Event Started!';
+      this.remainingTime = 'This event has passed!';
       clearInterval(this.interval);
       return;
     }
@@ -53,6 +57,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    this.remainingTime = `${days} days, ${hours} h, ${minutes} m, ${seconds} s`;
+    const dayString = days > 0 ? `${days} day${days !== 1 ? 's' : ''}, ` : '';
+    this.remainingTime = `${dayString}${hours} h, ${minutes} m, ${seconds} s`;
   }
 }
