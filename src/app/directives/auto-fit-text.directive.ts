@@ -129,22 +129,30 @@ export class AutoFitTextDirective implements AfterViewInit, OnDestroy {
     measureFn: (fontSize: number) => number,
     availableWidth: number,
     minFont: number,
-    maxFont: number,
+    maxFont: number
   ): number {
-    let low = minFont
-    let high = maxFont
-    let optimal = minFont
+    let low = minFont;
+    let high = maxFont;
+    let optimal = minFont;
+    let step = 20;
+  
     while (low <= high) {
-      const mid = Math.floor((low + high) / 2)
-      const width = measureFn(mid)
+      const mid = Math.floor((low + high) / 2);
+      const width = measureFn(mid);
+  
       if (width <= availableWidth) {
-        optimal = mid
-        low = mid + 1
+        optimal = mid;
+        low = mid + step;
       } else {
-        high = mid - 1
+        high = mid - step;
+      }
+  
+      if (high - low < step) {
+        step = Math.max(1, Math.floor(step / 2));
       }
     }
-    return optimal
+  
+    return optimal;
   }
 
   ngOnDestroy(): void {
