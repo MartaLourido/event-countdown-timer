@@ -1,10 +1,12 @@
 import { Component, Input, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import { AutoFitTextDirective } from '../../directives/auto-fit-text.directive';
 
 @Component({
   selector: 'app-countdown-timer',
   standalone: true,
   templateUrl: './countdown-timer.component.html',
   styleUrls: ['./countdown-timer.component.scss'],
+  imports: [AutoFitTextDirective],
 })
 export class CountdownTimerComponent implements OnInit, OnDestroy, OnChanges {
   @Input() eventDate: string = '';

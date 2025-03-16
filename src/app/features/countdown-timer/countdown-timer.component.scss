@@ -1,8 +1,9 @@
 .countdown {
-    font-size: 74px;
+    font-size: clamp(28px, 6vw, 32px);
     font-weight: 400;
     color: #000;
     text-align: center;
-    margin: 20px 0; 
+    margin: 10px 0;
+    white-space: nowrap;
   }
   

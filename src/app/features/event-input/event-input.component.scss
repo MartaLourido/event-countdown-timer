@@ -1,27 +1,29 @@
 .custom-input {
   width: 278px;
   height: 54px;
-  
+
   .mat-mdc-form-field-flex {
-    align-items: center;
-    height: 100%;
+      align-items: center;
+      height: 100%;
   }
 
   .mat-mdc-text-field-wrapper {
-    border: 1px solid #757575 !important;
-    border-radius: 4px !important;
-    background-color: #FAF9F6;
-  }
-
-  input {
-    font-size: 16px;
-    padding: 10px;
-    height: 100%;
-    text-align: left;
+      border: 1px solid #757575;
+      border-radius: 4px;
+      background-color: #FAF9F6;
+      height: 54px !important;
   }
 
   .mat-mdc-floating-label {
-    top: -8px !important;
-    font-size: 14px !important;
+      top: -8px;
+      font-size: 14px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .custom-input {
+      position: relative;
+      margin-top: 20px;
+  }
+}
+

@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { EventInputComponent } from './features/event-input/event-input.component';
 import { DatePickerComponent } from './features/date-picker/date-picker.component';
 import { CountdownTimerComponent } from './features/countdown-timer/countdown-timer.component';
+import { AutoFitTextDirective } from './directives/auto-fit-text.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [EventInputComponent, DatePickerComponent, CountdownTimerComponent],
+  imports: [EventInputComponent, DatePickerComponent, CountdownTimerComponent, AutoFitTextDirective],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

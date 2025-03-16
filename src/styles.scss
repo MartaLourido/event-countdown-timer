@@ -10,14 +10,8 @@ body {
   font-style: normal;
 }
 
-h1 {
-  font-family: 'Open Sauce One', sans-serif;
-  font-weight: 800;
-  font-size: 28px;
-  line-height: 135%;
-  letter-spacing: -2%;
-  color: #72035D;
+html, body { 
+  height: 100%; 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

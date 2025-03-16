@@ -1,6 +1,5 @@
 <div class="page">
-  <h1>Time to {{ eventTitle || 'Your event' }}</h1>
-
+  <h1 autoFitText>Time to {{ eventTitle }}</h1>
   <app-countdown-timer [eventDate]="formattedDate"></app-countdown-timer>
 
   <div class="form-container">
