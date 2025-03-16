@@ -12,7 +12,8 @@ Event Countdown Timer is an Angular application that allows users to set an even
 - Text dynamically resizes to fit the screen width.
 - Works in both portrait and landscape mode.
 - Event details persist between sessions.
-- Built with Angular, TypeScript and Material UI.
+- Built with Angular, TypeScript, and Material UI.
+- **Accessibility-focused**: Designed to align with [WCAG 2.1 guidelines](https://www.w3.org/WAI/WCAG21/quickref/) for better usability.
 
 ## Installation
 
@@ -81,18 +82,32 @@ This will launch Karma and execute all tests in a browser.
 - Ensures proper formatting and persistence of event details.
 - Validates real-time countdown updates.
 
+## Accessibility (WCAG 2.1 Compliance)
+
+- **Keyboard Navigation**: The app ensures all features are accessible via keyboard.
+- **Color Contrast**: Uses sufficient contrast to ensure readability.
+- **Screen Reader Support**: Ensures that countdown updates and user inputs are announced properly.
+- **Responsive Design**: Adapts to different screen sizes for better usability.
+
 ## Future Improvements
 
 - **Improve UI/UX**: Enhance styling and animations.
 - **Time Zone Support**: Allow users to select a time zone for the event.
 - **Notifications**: Send notifications when the event countdown is near zero.
 - **Multi-Language Support**: Implement i18n for global usability.
+- **Further Accessibility Enhancements**: Improve ARIA attributes and voice control support.
+
+## Deployment
+
+The application is deployed and accessible at:
+👉 [Live Demo](https://MartaLourido.github.io/event-countdown-timer/)
 
 ## Links
 
 - [GitHub Repository](https://github.com/MartaLourido/event-countdown-timer)
 - [Angular Documentation](https://angular.io/docs)
 - [Material UI Documentation](https://material.angular.io/)
+- [WCAG 2.1 Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ## License
 
