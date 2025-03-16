@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { AutoFitTextDirective } from '../../directives/auto-fit-text.directive'; 
 
 @Component({
   selector: 'app-event-input',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule],
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, AutoFitTextDirective], 
   templateUrl: './event-input.component.html',
   styleUrls: ['./event-input.component.scss'],
 })
