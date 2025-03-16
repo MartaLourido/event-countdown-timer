@@ -1,33 +1,100 @@
-# Description & requirements
+# Event Countdown Timer
 
-Your objective in this assignment is to create a countdown app built using this boilerplate (+ any other tools of your choice) that follows the design specifications provided [in this Figma file](https://www.figma.com/file/UPEugUz5jM9IzIkWft2Y9m/NC-challenge). The app should work in portrait as well as in landscape mode while the text displayed on the screen should always fill the whole width of the screen.
+## Description
 
-In your app, it should be possible to define the end date and the name of the event taking place on that day. The countdown should always start from the current time and it should display the time remaining to your specified end date in the following format: Days, Hours(h), Minutes(m), Seconds(s) *(e.g., 3 days, 15 h, 20 m, 5 s)*. To make sure the text always covers the entire screen width, it should resize whenever necessary to achieve this objective.
+Event Countdown Timer is an Angular application that allows users to set an event name and an end date, displaying a countdown timer that updates in real-time. The application dynamically adjusts text size to fit the screen width and ensures persistence of event details across page reloads.
 
-The purpose of the solution is to “fit” the input text into an element in one line (no line breaks, filling the whole width) using the maximum possible font-size.
+## Features
 
-Please make sure that your text fit solution is reusable and that the event name, as well as the specified end date, are persisted between page reloads.
+- Set and save an event title.
+- Set and save an event date.
+- Countdown updates in real-time.
+- Text dynamically resizes to fit the screen width.
+- Works in both portrait and landscape mode.
+- Event details persist between sessions.
+- Built with Angular, TypeScript and Material UI.
 
-**Once you feel ready to share your solution, please:**
+## Installation
 
-- Commit the code to Github or your favorite VCS.
-- Write a simple README.md explaining how to set up the project (assuming it’s read by a developer who is experienced with all the used tools).
-- Include a URL to a deployed working Web page (use netlify.com or github.io or whatever simple hosting tool that works for you).
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/MartaLourido/event-countdown-timer.git
+    cd event-countdown-timer
+    ```
 
-Please put the resulting project in a public github repository and provide a link to it. Please make it easy for us to test the result.
+2. Install dependencies:
+    ```sh
+    npm install
+    ```
 
-## Optional goals
+3. Start the development server:
+    ```sh
+    ng serve
+    ```
 
-You’re free to complete this additional goal to get a higher score if you want!
+4. Open the application in your browser at:
+    ```sh
+    http://localhost:4200/
+    ```
 
-1. Write suggestions of how this solution can be improved. Describe what the next steps would be in order for this app to be production ready. 
+## Usage
 
-## Running the app
+- Enter an event title in the input field.
+- Select an event date from the date picker.
+- The countdown timer will display the time remaining until the event.
+- Resize the browser window to see the text dynamically adjust.
+- Refresh the page, and your event details will remain saved.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
+## Components
 
-## Further help
+### `AppComponent`
+- Manages the overall application state.
+- Loads and saves event details in local storage.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+### `CountdownTimerComponent`
+- Displays and updates the countdown timer in real-time.
+- Formats remaining time in "Days, Hours, Minutes, Seconds".
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### `EventInputComponent`
+- Handles user input for the event title.
+- Emits changes to the parent component.
+
+### `DatePickerComponent`
+- Provides a date picker for selecting an event date.
+- Emits changes to the parent component.
+
+### `AutoFitTextDirective`
+- Dynamically resizes text to fit within its container.
+- Adjusts font size based on screen width.
+
+## Testing
+
+### Running Tests
+To execute unit tests, run:
+```sh
+ng test
+```
+This will launch Karma and execute all tests in a browser.
+
+### Test Coverage
+- Unit tests cover components, directives, and services.
+- Ensures proper formatting and persistence of event details.
+- Validates real-time countdown updates.
+
+## Future Improvements
+
+- **Improve UI/UX**: Enhance styling and animations.
+- **Time Zone Support**: Allow users to select a time zone for the event.
+- **Notifications**: Send notifications when the event countdown is near zero.
+- **Multi-Language Support**: Implement i18n for global usability.
+
+## Links
+
+- [GitHub Repository](https://github.com/MartaLourido/event-countdown-timer)
+- [Angular Documentation](https://angular.io/docs)
+- [Material UI Documentation](https://material.angular.io/)
+
+## License
+
+This project is licensed under the MIT License.
+
