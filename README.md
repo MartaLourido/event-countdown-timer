@@ -92,7 +92,7 @@ This will launch Karma and execute all tests in a browser.
 ## Deployment
 
 The application is deployed and accessible at:
-👉 [Live Demo](https://MartaLourido.github.io/event-countdown-timer/)
+👉 [Live Demo](https://event-countdown-timer-nu.vercel.app/)
 
 ## Links
 
